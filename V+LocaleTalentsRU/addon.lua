@@ -67,7 +67,7 @@ function FindTalentDesc(tempClass, tempTalent)
 	for i = 3, GameTooltip:NumLines() do
 		local r, g, b = getglobal("GameTooltipTextLeft" .. i):GetTextColor()
 		if math_round(r, 2) == 1 and math_round(g, 2) == 0.82 and math_round(b, 2) == 0 then
-			return {string.find(getglobal("GameTooltipTextLeft" .. i):GetText(), listTalent[tempClass][tempTalent].k)}
+			return {string.find(getglobal("GameTooltipTextLeft" .. i):GetText(), DB[tempClass][tempTalent].k)}
 		end
 	end
 end
@@ -77,10 +77,10 @@ function GameTooltip.SetTalent(self, tabIndex, talentIndex)
 	HookSetTalent(self, tabIndex, talentIndex)
 	local _, tempClass = UnitClass("player")
 	local tempTalent = getglobal("GameTooltipTextLeft1"):GetText()
-	if listTalent[tempClass][tempTalent] then
+	if DB[tempClass][tempTalent] then
 		local r = FindTalentDesc(tempClass, tempTalent)
 		GameTooltip:AddLine(" ", 1, 1, 1)
-		GameTooltip:AddLine(string.format(listTalent[tempClass][tempTalent].v, (r[3] or ""), (r[4] or ""), (r[5] or "")), 1, 1, 1, 1)
+		GameTooltip:AddLine(string.format(DB[tempClass][tempTalent].v, (r[3] or ""), (r[4] or ""), (r[5] or "")), 1, 1, 1, 1)
 		GameTooltip:Show()
 	end
 end
