@@ -63,6 +63,12 @@ local DB = {
 	}
 }
 
+-- Округляет число до указанной точности
+math_round = function(num, idp)
+    local mult = 10^(idp or 0)
+    return math.floor(num * mult + 0.5) / mult
+end
+
 function FindTalentDesc(tempClass, tempTalent)
 	for i = 3, GameTooltip:NumLines() do
 		local r, g, b = getglobal("GameTooltipTextLeft" .. i):GetTextColor()
