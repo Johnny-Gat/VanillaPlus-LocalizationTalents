@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: |cFFEBDEC2V+ Locale Talents RU|r |cFFFFFFFF[v0.1.1]|r
+## Notes: Talents localization into Russian for the server Vanilla Plus.
+## Author: Johnny Gat
+## Version: 0.1.1
+
+addon.lua
