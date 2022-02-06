@@ -164,6 +164,21 @@ function GetTalentId(title)
 	return tonumber(GetClassId() .. string.format("%02d", string.len(title)) .. (GetLetterCode(res[3]) + GetLetterCode(res[4]) + GetLetterCode(res[5]) + GetLetterCode(res[6])))
 end
 
+function GetClassId()
+	local classList = {
+		['Warrior'] = 1,
+		['Paladin'] = 2,
+		['Shaman'] = 3,
+		['Hunter'] = 4,
+		['Rogue'] = 5,
+		['Druid'] = 6,
+		['Warlock'] = 7,
+		['Mage'] = 8,
+		['Priest'] = 9
+	}
+	return classList[({UnitClass("player")})[1]]
+end
+
 function GetLetterCode(letter)
 	return string.byte(string.upper(letter)) - 65
 end
