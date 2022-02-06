@@ -5,4 +5,4 @@
 1. Открыть содержимое скаченного архива
 1. Скопировать папку `V+LocaleTalentsRU` в `путь к установленной игре\Interface\AddOns`
 
-[![Примеры](https://github.com/Johnny-Gat/VanillaPlus-LocalizationTalents/raw/dev/IMAGE.png)]
+![Примеры](https://github.com/Johnny-Gat/VanillaPlus-LocalizationTalents/raw/dev/IMAGE.png)
